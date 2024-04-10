@@ -18,7 +18,7 @@ const CharacterList: React.FC = () => {
       try {
         const data = await getCharacters(page);
         setCharacters(data.results);
-        setTotalPages(Math.ceil(data.count / 10)); 
+        setTotalPages(Math.ceil(data.count / 10));
         setLoading(false);
         setError(null);
       } catch (err) {
@@ -31,7 +31,7 @@ const CharacterList: React.FC = () => {
   }, [page]);
 
   useEffect(() => {
-    setPage(1); 
+    setPage(1);
   }, [searchQuery]);
 
   const handleNextPage = () => {
@@ -50,10 +50,10 @@ const CharacterList: React.FC = () => {
     setSearchQuery(e.target.value);
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="flex items-center justify-center h-screen"><div className="text-white">Loading...</div></div>;
+  if (error) return <div className="flex items-center justify-center h-screen"><div className="text-white bg-red-500 p-4">{`Error: ${error}`}</div></div>;
 
-  
+
 
   return (
     <div className="container mx-auto px-4">
