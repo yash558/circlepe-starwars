@@ -9,7 +9,7 @@ const Modal: React.FC<{ onClose: () => void, children: React.ReactNode }> = ({ o
                     <div className="flex items-center justify-between p-5 border-b border-gray-200 rounded-t">
                         <h3 className="text-xl font-bold text-gray-800">Character Details</h3>
                         <button
-                            className="p-1 ml-auto bg-transparent border-0  opacity-5 focus:outline-none"
+                            className="p-1 ml-auto border-0 focus:outline-none"
                             onClick={onClose}
                         >
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
