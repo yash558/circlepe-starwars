@@ -53,6 +53,8 @@ const CharacterList: React.FC = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
+  
+
   return (
     <div className="container mx-auto px-4">
       <div className="my-8">

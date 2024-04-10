@@ -38,9 +38,12 @@ const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
     setModalOpen(false);
   };
 
+  const speciesColor = character.species[0] === 'D' ? 'bg-blue-600' : 'bg-green-600';
+
+
   return (
     <div>
-      <div className="bg-gray-800 p-4 rounded-md hover:bg-gray-700 transition duration-300 cursor-pointer" onClick={() => setModalOpen(true)}>
+      <div className={`${speciesColor} p-4 rounded-md hover:bg-gray-700 transition duration-300 cursor-pointer`} onClick={() => setModalOpen(true)}>
         <img src={`https://picsum.photos/200/300?random=${Math.random()}`} alt="Character" className="w-full h-64 rounded-md" />
         <div className="text-white text-lg font-semibold mt-2">{character.name}</div>
       </div>
@@ -89,6 +92,10 @@ const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
                 <div>
                   <p className="font-semibold">Residents:</p>
                   <p>{characterDetails?.residents.length}</p>
+                </div>
+                <div>
+                  <p className="font-semibold">Species:</p>                 
+                  <p>{character.species.length > 0 ? character.species : 'Unknown'}</p>
                 </div>
               </div>
             </div>
